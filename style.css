@@ -1,0 +1,136 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: fit-content;
+    background-color: #031227;
+    position: fixed;
+    width: 100%;
+    opacity: 0.7;
+    padding: 0 2vw;
+    z-index: 5;
+}
+
+.header .header_left{
+    width: 14vw;
+} 
+
+.header_left img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.header_right {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header_right a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    margin: 0 1vw;
+}
+
+.header_right a:hover {
+    color: #00b4d8;
+}
+
+.main{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.main2{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #031227;
+    color: white;
+
+}
+
+.footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #031227;
+    height: 30vh;
+    width: 100%;
+    opacity: 0.7;
+    padding: 0 2vw;
+    z-index: 5;
+}
+
+.footer .footer_left{
+    color: white;
+}
+
+.footer .footer_right ul{
+    list-style: none;
+}
+
+.footer_right a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2 rem;
+    margin: 0 1vw;
+}
+
+.right{
+    padding: 4vw;
+    animation: aboutanim2 5s forwards;
+}
+
+.right img{
+    margin-top: 4vw;
+    border-radius:40% 0%;
+    animation: aboutanim2 5s forwards;
+
+}
+@keyframes aboutanim2 {
+    0% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+.left{
+    padding: 4vw;
+    animation: aboutanim 5s forwards;
+
+}
+
+
+.left img{
+    margin-top: 4vw;
+    border-radius:0% 40%;
+    animation: aboutanim 5s forwards;
+}
+
+@keyframes aboutanim {
+    0% {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+
