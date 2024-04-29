@@ -25,10 +25,12 @@
 </html>
 
 <?php
+
 	session_start();
 
-	if (!isset($_SESSION["logged_in"])){
-		$_SESSION["logged_in"] = false;
+	if (isset($_SESSION["userid_created"]) && $_SESSION["userid_created"] == true){
+		echo "<script>alert(\"Registration successful!\");</script>";
+		$_SESSION["userid_created"] = false;
 	}
 
 	if (isset($_POST["submit"])){
@@ -40,8 +42,8 @@
 				while (($row = fgetcsv($fp)) != false){
 					if ($row[0] == $un && $row[2] == $pw){
 						$_SESSION["logged_in"] = true;
-						/*echo "<script>alert(\"You are now logged in!\");</script>";*/
-						header('Location: '.$uri.'/website/');
+						$_SESSION["logged_in_now"] = true;
+						header('Location: '.$uri.'index.php');
 						break;
 					}
 				}
@@ -59,4 +61,6 @@
 		}
 		$_POST["submit"] = null;
 	}
+
+
 ?>

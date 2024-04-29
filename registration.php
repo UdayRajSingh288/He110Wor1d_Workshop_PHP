@@ -34,6 +34,8 @@
 
 <?php
 
+	session_start();
+
 	function checkRecord(){
 		$fp = @fopen("users.csv", "r");
 		if ($fp){
@@ -71,9 +73,10 @@
 	}
 
 	if (isset($_POST["submit"])){
+		$_POST["submit"] = null;
 		if (writeRecord()){
+			$_SESSION["userid_created"] = true;
 			header('Location: '.$uri.'login.php');
 		}
-		$_POST["submit"] = null;
 	}
 ?>

@@ -70,3 +70,26 @@
     </footer>
 </body>
 </html>
+
+<?php
+
+	session_start();
+
+	if ($_SESSION["logged_in_now"]){
+		echo "<script>alert(\"You are now logged in!\");</script>";
+		$_SESSION["logged_in_now"] = false;
+	}
+
+	if (!isset($_SESSION["logged_in"])){
+		$_SESSION["logged_in"] = false;
+	}
+
+	if (!isset($_SESSION["userid_created"])){
+		$_SESSION["userid_created"] = false;
+	}
+
+	if (!isset($_SESSION["logged_in_now"])){
+		$_SESSION["logged_in_now"] = false;
+	}
+
+?>
