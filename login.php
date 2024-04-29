@@ -26,9 +26,11 @@
 
 <?php
 	session_start();
+
 	if (!isset($_SESSION["logged_in"])){
 		$_SESSION["logged_in"] = false;
 	}
+
 	if (isset($_POST["submit"])){
 		if ($_SESSION["logged_in"] == false){
 			$fp = @fopen("users.csv", "r");
@@ -38,7 +40,8 @@
 				while (($row = fgetcsv($fp)) != false){
 					if ($row[0] == $un && $row[2] == $pw){
 						$_SESSION["logged_in"] = true;
-						echo "<script>alert(\"You are now logged in!\");</script>";
+						/*echo "<script>alert(\"You are now logged in!\");</script>";*/
+						header('Location: '.$uri.'/website/');
 						break;
 					}
 				}

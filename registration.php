@@ -72,7 +72,7 @@
 
 	if (isset($_POST["submit"])){
 		if (writeRecord()){
-			echo "<script>alert(\"Registration successful!\");</script>";
+			header('Location: '.$uri.'login.php');
 		}
 		$_POST["submit"] = null;
 	}
